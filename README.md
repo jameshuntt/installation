@@ -52,3 +52,8 @@ fn main() -> Result<(), installation::InstallError> {
 
 `build_and_install(InstallOptions::default("name"))` from 0.1 still exists
 and now goes through the same plan → install path.
+
+## Releasing
+
+Bump `version` in Cargo.toml, add a dated `## <version> (YYYY-MM-DD)` entry to CHANGELOG.md, and push to
+`main`. CI (.github/workflows/ci.yml) runs the tests and clippy, then publishes that version to crates.io.
